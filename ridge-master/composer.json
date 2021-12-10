@@ -1,0 +1,57 @@
+{
+  "name": "phpinnacle/ridge",
+  "type": "library",
+  "description": "PHPinnacle async AMQP client",
+  "keywords": [
+    "phpinnacle",
+    "async",
+    "amqp"
+  ],
+  "homepage": "https://github.com/phpinnacle/ridge",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "PHPinnacle",
+      "email": "dev@phpinnacle.com",
+      "homepage": "https://phpinnacle.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">=8.0",
+    "amphp/amp": "v2.6.*",
+    "amphp/socket": "v1.1.*",
+    "phpinnacle/buffer": "v1.2.*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "v9.5.*",
+    "vimeo/psalm": "v4.13.*",
+    "phpstan/phpstan": "v1.2.*"
+  },
+  "prefer-stable": true,
+  "autoload": {
+    "psr-4": {
+      "PHPinnacle\\Ridge\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "PHPinnacle\\Ridge\\Tests\\": "tests"
+    }
+  },
+  "scripts": {
+    "psalm": "./vendor/bin/psalm --config=psalm.xml",
+    "phpstan": "./vendor/bin/phpstan analyse src --level 9",
+    "tests": "./vendor/bin/phpunit --configuration phpunit.xml --verbose",
+    "coverage": "./vendor/bin/phpunit --configuration phpunit.xml --coverage-html ./coverage --verbose"
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.0-dev"
+    }
+  },
+  "config": {
+    "sort-packages": true,
+    "optimize-autoloader": true
+  }
+}
